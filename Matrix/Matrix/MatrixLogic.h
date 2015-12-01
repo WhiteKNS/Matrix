@@ -13,7 +13,7 @@ using namespace std;
 
 class Matrix{
 
-	int Lines;
+	int Lines; 
 	int Columns;
 	int **Field;
 
@@ -22,90 +22,90 @@ class Matrix{
 
 	int **FinalField;
 
-	stack<int> StLine; //���������� ���������� �������
+	stack<int> StLine; //здесь храним текущую линию и столбик
 
 	stack<int> StColumn;
 
-	stack<int> StackLines; //���������� ���������(4)
+	stack<int> StackLines; //здесь хранятся точки для окружения(4)
 
-	stack<int> StackColumns;//���������� (4)
+	stack<int> StackColumns;// (4)
 
-	stack<int> StackCounter; //�� 1 ����� � � ������ 4 ����
+	stack<int> StackCounter; //здесь счетчик для подсчета точек окружения
 
-	stack<int> FinalStackLines; //���� ��� �������� ��������� �����������
+	stack<int> FinalStackLines; //
 
 	stack<int> FinalStackColumns;
 
-	vector<int> vecLines;
+	vector<int> vecLines;//здесь удачные ходы
 
 	vector<int> vecColumns;
 
-	bool End;
+	bool End;//флаг конца игры
 
 	int counter;
 
-	long result; // ������������� ���������
+	long result; // результат
 
-	long maxResult; //���� ���������
+	long maxResult; //максимальный результат
 
-	ofstream fout;// ���� � ������������
+	ofstream fout;// файл для записи
 
 
-	long getMaxResult();
+	long getMaxResult(); //геттеры
 
 	long getResult();
 
-	void PrintFirstFieldToFile();
+	void PrintFirstFieldToFile(); //печать начального поля в файл
 
-	void PrintMaxResultToFile();
+	void PrintMaxResultToFile();//печать максимального результата в файл
 
-	void getPrintFinalField();
+	void getPrintFinalField(); // поле с лучшим результатом на экран
 
-	void Initialize();
+	void Initialize(); //начальная инициализация
 
-	void ClearBool();
+	void ClearBool(); //очистка данных
 
-	void PrintField();
+	void PrintField(); //вывод на экран поля
 
-	void PrintBool();
+	void PrintBool(); //вывод на экран превдобулевого поля
 
-	void const MethodPush(int const i, int const j);
+	void const MethodPush(int const i, int const j);//здесь храним точки окружения
 
-	bool const Check(int const lineStack, int const columnStack, int  **BoolField);
+	bool const Check(int const lineStack, int const columnStack, int  **BoolField);//проверка, можем ли походить сюда?
 
-	long Result();
+	long Result(); //подсчет результата
 
-	long FindMaxResult();
+	long FindMaxResult(); //находим максимальный результат
 
-	void const SaveAllToFile();
+	void const SaveAllToFile();//все в файл
 
-	void const PrintFinalFieldToFile();
+	void const PrintFinalFieldToFile();//печать  в файл лучшего результата
 
-	void IfSumIsEqualToTen(int const &LineStack, int const &ColumnStack, int &Line, int&Column, int &Sum);
+	void IfSumIsEqualToTen(int const &LineStack, int const &ColumnStack, int &Line, int&Column, int &Sum); //если сумма равна 10
 
-	void IfSumGreaterThatTen(int const& LineStack, int const& ColumnStack, int &Line, int &Column, int &Sum);
+	void IfSumGreaterThatTen(int const& LineStack, int const& ColumnStack, int &Line, int &Column, int &Sum); //если сумма больше 10
 
-	void IfCanCheckThisCell(int &LineStack, int &ColumnStack);
+	void IfCanCheckThisCell(int &LineStack, int &ColumnStack);//есть ли еще для текущей точки точки окружения?
 
 	void IfCanntCheckCell(int &LineStack, int &ColumnStack, int &Sum, int &Line, int &Column);
 
-	void Method(int const &i, int const &j, int &Sum);
+	void Method(int const &i, int const &j, int &Sum);//основной метод поиска ходов
 
-	void StackClear(stack<int> &st);
+	void StackClear(stack<int> &st); //метод для очистки стека
 
-	void Clear();
+	void Clear(); //очистить все текущие данные
 
 public:
 
-	Matrix();
+	Matrix();//конструктор
 
-	Matrix(int const Lines, int const Columns);
+	Matrix(int const Lines, int const Columns); //конструктор
 
-	Matrix(const Matrix &obj);
+	Matrix(const Matrix &obj); //конструктор копирования
 
-	~Matrix();
+	~Matrix(); //деструктор
 
-	void Main();
+	void Main(); //управляющий метод
 };
 
 #endif
