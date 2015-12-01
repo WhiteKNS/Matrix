@@ -1,0 +1,4 @@
+﻿1>------ Build started: Project: Matrix, Configuration: Debug Win32 ------
+1>  Matrix.cpp
+1>  Matrix.vcxproj -> C:\Users\HP\Documents\Visual Studio 2013\Projects\Matrix\Debug\Matrix.exe
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
